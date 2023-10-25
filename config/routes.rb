@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/home'
-  get 'welcome/features'
-  get 'welcome/about'
-  get 'welcome/contact'
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,5 +7,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-   root to: "public#homepage"
+  root to: "public#homepage"
 end
