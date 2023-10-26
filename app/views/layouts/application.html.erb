@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsApp</title>
+    <title><%= content_for?(:page_title) ? yield(:page_title) : "Ruby on Rails Blog" %> | Rails App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,7 +14,7 @@
   <body>
   <div class="container">
   <div class="row">
-  <div class="col">
+  <div class="col page-nav">
   <%= render partial: "layouts/menu" %>
   </div>
   </div>
@@ -25,5 +25,7 @@
   </div>
   </div>
     <%= render partial: "layouts/footer" %>
+
+    <%= yield(:scripts) if content_for?(:scripts) %>
   </body>
 </html>
