@@ -1,3 +1,6 @@
-Welcome to Outra Coisa 
+<h2>Latest Posts</h2>
 
-1+ 1 
+<% @posts.each do |post| %>
+  <h3><%= link_to post.title, post_path(post) %></h3>
+  <p><%= post.summary %></p>
+<% end %>
