@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   validates :summary, presence: true
   validates :body, presence: true
 
-  belongs_to :user
+  belongs_to :category
 
   def details
     "This post was created on #{created_at.strftime("%d/%m/%Y")}"
